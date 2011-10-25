@@ -1,6 +1,27 @@
 = redis_throttle
 
-Description goes here.
+A simple class to rate-limit execution of blocks of code. Add redis-throttle to your Gemfile like so:
+
+    gem "redis_throttle"
+
+Then wrap any block you want to throttle in the RedisThrottle.limit method, like so:
+
+    # you MUST pass the number of seconds to throttle your method by
+    RedisThrottle.limit(30) do
+      do_wall_post_stuff()
+      counter += 1
+      logger.write_to_log
+    end
+
+You can also namespace the throttling to any number of arguments passed to the limit method
+
+    RedisThrottle.limit(30, user_id, endpoint_name) do
+      do_wall_post_stuff(user_id)
+      counter[endpoint_name] += 1
+      logger.write_to_log(user_id, endpoint_name)
+    end
+
+Couldn't be easier.
 
 == Contributing to redis_throttle
  
@@ -14,6 +35,6 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2011 Andrew Evans. See LICENSE.txt for
+Copyright (c) 2011 Heyzap, Inc. See LICENSE.txt for
 further details.
 

@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "redis_throttle"
   gem.homepage = "http://github.com/agius/redis_throttle"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Throttle code execution with Redis}
+  gem.description = %Q{Throttle code execution with Redis. Can namespace to parameters, too. Simple as pie.}
   gem.email = "andy@heyzap.com"
   gem.authors = ["Andrew Evans"]
   # dependencies defined in Gemfile
