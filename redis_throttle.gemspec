@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "lib/redis_throttle.rb",
+    "redis_throttle.gemspec",
     "test/helper.rb",
     "test/redis.yml.dist",
     "test/test_redis_throttle.rb"
