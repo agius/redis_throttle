@@ -1,3 +1,6 @@
+# non-dist config files
+*.yml
+
 # rcov generated
 coverage
 
